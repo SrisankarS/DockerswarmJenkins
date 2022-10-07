@@ -27,12 +27,6 @@ pipeline {
                 }
             }
 
-            stage('Cleaning Up') {
-                steps{
-                  sh "docker rmi $registry:$BUILD_NUMBER"
-                }
-            }
-
             stage('Run Angular') {
                 steps{
                   sh "docker service create --name myclusterdemo --publish 4200:4200 --replicas 2 $registry:$BUILD_NUMBER"
