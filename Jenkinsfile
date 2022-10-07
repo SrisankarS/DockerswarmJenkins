@@ -8,12 +8,7 @@ pipeline {
 
     agent any
     stages {
-            stage('Cloning our Git') {
-                steps {
-                git 'https://github.com/SrisankarS/DockerswarmJenkins.git'
-                }
-            }
-
+           
             stage('Building Docker Image') {
                 steps {
                     script {
