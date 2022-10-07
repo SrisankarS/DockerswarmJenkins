@@ -1,7 +1,7 @@
 pipeline {
     environment {
     registry = "srisankar/dockerswarm"
-    registryCredential = "dockerhub"
+    registryCredential = "HUB"
     dockerImage = ''
     PATH = "$PATH:/usr/local/bin"
 }
