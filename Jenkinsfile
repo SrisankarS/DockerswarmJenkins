@@ -30,7 +30,7 @@ pipeline {
             stage('Run Angular') {
                 steps{
                   //sh "docker service create --name myclusterdemo --publish 4200:4200 --replicas 2 $registry:$BUILD_NUMBER"
-                  sh "docker service create --name myclusterdemo --publish 4200:4200 --replicas 2 $registry:latest"
+                  sh "docker service create --name angular --publish 4200:4200 --replicas 2 $registry:latest"
                 }
             }
         }
