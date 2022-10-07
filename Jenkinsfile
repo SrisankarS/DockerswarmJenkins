@@ -9,23 +9,23 @@ pipeline {
     agent any
     stages {
            
-            stage('Building Docker Image') {
-                steps {
-                    script {
-                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                    }
-                }
-            }
+            // stage('Building Docker Image') {
+            //     steps {
+            //         script {
+            //             dockerImage = docker.build registry + ":$BUILD_NUMBER"
+            //         }
+            //     }
+            // }
 
-            stage('Deploying Docker Image to Dockerhub') {
-                steps {
-                    script {
-                        docker.withRegistry('', registryCredential) {
-                        dockerImage.push()
-                        }
-                    }
-                }
-            }
+            // stage('Deploying Docker Image to Dockerhub') {
+            //     steps {
+            //         script {
+            //             docker.withRegistry('', registryCredential) {
+            //             dockerImage.push()
+            //             }
+            //         }
+            //     }
+            // }
 
             stage('Run Angular') {
                 steps{
